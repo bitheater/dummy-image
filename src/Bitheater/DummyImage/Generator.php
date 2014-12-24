@@ -41,7 +41,7 @@ abstract class Generator
     public function __construct()
     {
         $this->dimension = new Dimension(500, 500);
-        $this->overrideText($this->dimension);
+        $this->overrideText();
         $this->imageExtension = new ImageExtension('png');
         $this->backgroundColor = new Color('000000');
         $this->stringColor = new Color('ffffff');
@@ -111,7 +111,7 @@ abstract class Generator
     public function setDimensions(Dimension $dimension)
     {
         $this->dimension = $dimension;
-	$this->overrideText($dimension);
+        $this->overrideText();
 
         return $this;
     }
@@ -145,10 +145,7 @@ abstract class Generator
         return $this->text;
     }
 
-    /**
-     * @var Dimension $dimension
-     */
-    private function overrideText(Dimension $dimension)
+    private function overrideText()
     {
          if (!$this->textChanged) {
              $this->text = str_replace('x',' × ', (string) $this->dimension);
