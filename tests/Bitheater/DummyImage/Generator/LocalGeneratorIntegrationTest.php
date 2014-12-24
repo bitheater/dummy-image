@@ -1,0 +1,56 @@
+<?php
+
+namespace Bitheater\DummyImage\Generator;
+
+use Bitheater\DummyImage\Model\Color;
+use Bitheater\DummyImage\Model\Dimension;
+
+class LocalGeneratorIntegrationTest extends \PHPUnit_Framework_TestCase
+{
+    private $file;
+
+    public function setUp()
+    {
+        $this->file = __DIR__ . '/generated/local.png';
+    }
+
+    public function testImageGetsGenerated()
+    {
+        $generator = new LocalGenerator(ImagineFactory::GD);
+        $result = $generator->generate($this->file);
+
+        $this->assertInstanceOf('Bitheater\DummyImage\Result', $result);
+        $this->assertFileExists($this->file);
+    }
+
+    public function testImageWithOptionsGetsGenerated()
+    {
+        $generator = new LocalGenerator(ImagineFactory::GD);
+
+        $generator
+            ->setDimensions(new Dimension(800, 900))
+            ->setText('Hello World!')
+            ->setStringColor(new Color('000000'))
+            ->setBackgroundColor(new Color('efefef'));
+
+        $result = $generator->generate($this->file);
+
+        $this->assertInstanceOf('Bitheater\DummyImage\Result', $result);
+        $this->assertFileExists($this->file);
+    }
+
+    public function testExceptionIsThrownWithInvalidData()
+    {
+        $this->setExpectedException('InvalidArgumentException');
+
+        $generator = new LocalGenerator(ImagineFactory::GD);
+        $generator->setDimensions(new Dimension(40000, 40));
+    }
+
+    public function tearDown()
+    {
+        if (file_exists($this->file)) {
+            unlink($this->file);
+        }
+    }
+}

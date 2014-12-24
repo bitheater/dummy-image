@@ -1,0 +1,26 @@
+{
+    "name": "bitheater/dummy-image",
+    "description": "Create dummy images",
+    "keywords": ["dummy images", "fixture images"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Magd Kudama",
+            "email": "magdkudama@gmail.com"
+        },
+        {
+            "name": "Jonathan Ruiz",
+            "email": "jonathanruiz@gmail.com"
+        }
+    ],
+    "require": {
+        "imagine/imagine": "dev-master",
+        "guzzle/guzzle": "3.9.*@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": { "Bitheater\\DummyImage\\": "src/Bitheater/DummyImage" }
+    }
+}
