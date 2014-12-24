@@ -25,11 +25,11 @@ A minimum working version (for local image generation):
 
 use Bitheater\DummyImage\Generator\LocalGenerator;
 
-$generator = new LocalGenerator(ImagineFactory::GD);
+$generator = new LocalGenerator(ImagineFactory::GD); // You could also use IMAGICK and GMAGICK
 $result = $generator->generate(__DIR__ . '/image.png');
 ```
 
-Local image generation is good when you don't have access to remote data (maybe you want to create fixtures without connection).
+Local image generation is good when you don't have access to remote data (maybe you want to create fixtures without connection). Local generation needs GD, IMAGICK or GMAGICK installed on your server.
 
 A minimum working version (for remote image generation):
 
