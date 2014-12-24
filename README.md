@@ -2,6 +2,7 @@ Dummy Image Generator
 =====================
 
 [![Build Status](https://travis-ci.org/bitheater/dummy-image.svg?branch=master)](https://travis-ci.org/bitheater/dummy-image)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bitheater/dummy-image/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bitheater/dummy-image/?branch=master)
 
 This library is just a dummy image generator for your PHP projects. We find it cool for creating fixtures for your projects :)
 
