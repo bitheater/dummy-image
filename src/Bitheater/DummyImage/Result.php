@@ -2,12 +2,12 @@
 
 namespace Bitheater\DummyImage;
 
-use Imagine\Image\AbstractImage;
+use Imagine\Image\ImageInterface;
 
 class Result
 {
     /**
-     * @var AbstractImage
+     * @var ImageInterface
      */
     private $imageInstance;
 
@@ -22,11 +22,11 @@ class Result
     private $url;
 
     /**
-     * @param AbstractImage $imageInstance
+     * @param ImageInterface $imageInstance
      * @param string $file
      * @param string $url
      */
-    public function __construct(AbstractImage $imageInstance = null, $file = null, $url = null)
+    public function __construct(ImageInterface $imageInstance = null, $file = null, $url = null)
     {
         $this->imageInstance = $imageInstance;
         $this->file = $file;
@@ -34,7 +34,7 @@ class Result
     }
 
     /**
-     * @return AbstractImage
+     * @return ImageInterface
      */
     public function getImageInstance()
     {
