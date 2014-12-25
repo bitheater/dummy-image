@@ -4,7 +4,7 @@ Dummy Image Generator
 [![Build Status](https://travis-ci.org/bitheater/dummy-image.svg?branch=master)](https://travis-ci.org/bitheater/dummy-image)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bitheater/dummy-image/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bitheater/dummy-image/?branch=master)
 
-This library is just a dummy image generator for your PHP projects. We find it cool for creating fixtures for your projects :)
+This library is a dummy image generator for your PHP projects. We find it very useful for creating of fixtures for our projects.
 
 Installing
 ----------
@@ -30,7 +30,7 @@ $generator = new LocalGenerator(ImagineFactory::GD); // You could also use IMAGI
 $result = $generator->generate(__DIR__ . '/image.png');
 ```
 
-Local image generation is good when you don't have access to remote data (maybe you want to create fixtures without connection). Local generation needs GD, IMAGICK or GMAGICK installed on your server.
+Local image generation is good when you don't have access to the external service (or maybe you need to create fixtures without internet connection). Local generation needs GD, IMAGICK or GMAGICK installed on your server.
 
 A minimum working version (for remote image generation):
 
