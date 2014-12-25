@@ -14,8 +14,8 @@
         }
     ],
     "require": {
-        "imagine/imagine": "dev-master",
-        "guzzle/guzzle": "3.9.*@dev"
+        "imagine/imagine": "~0.5,<0.7",
+        "guzzle/guzzle": "~3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"

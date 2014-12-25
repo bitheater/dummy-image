@@ -14,7 +14,6 @@ Add the dependency to the ```composer.json``` file:
 ```json
 {
     "require": {
-        "imagine/imagine": "dev-master"
         "bitheater/dummy-image": "dev-master"
     }
 }
