@@ -43,7 +43,7 @@ class LocalGenerator extends Generator
 
         $image = $this->imagine->create(
             new Box($this->dimension->getWidth(), $this->dimension->getHeight()),
-            $palette->color($this->backgroundColor->getColor(), 0)
+            $palette->color($this->backgroundColor->getColor())
         );
 
         $font = ImagineFactory::createFontInstance(
