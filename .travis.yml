@@ -9,6 +9,7 @@ before_script:
 
 before_install:
   - sudo apt-get install -qq php5-gd
+  - sudo apt-get install -qq imagemagick
   - sudo apt-get install -qq php5-imagick
   - sudo apt-get install -qq libgraphicsmagick1-dev
   - printf "\n" | pecl install -f gmagick-1.1.7RC2
