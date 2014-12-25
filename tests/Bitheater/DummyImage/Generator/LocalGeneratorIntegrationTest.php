@@ -14,9 +14,12 @@ class LocalGeneratorIntegrationTest extends \PHPUnit_Framework_TestCase
         $this->file = __DIR__ . '/generated/local.png';
     }
 
-    public function testImageGetsGenerated()
+    /**
+     * @dataProvider imagineProvider
+     */
+    public function testImageIsGenerated($provider)
     {
-        $generator = new LocalGenerator(ImagineFactory::GD);
+        $generator = new LocalGenerator($provider);
         $result = $generator->generate($this->file);
 
         $this->assertInstanceOf('Bitheater\DummyImage\Result', $result);
@@ -45,6 +48,15 @@ class LocalGeneratorIntegrationTest extends \PHPUnit_Framework_TestCase
 
         $generator = new LocalGenerator(ImagineFactory::GD);
         $generator->setDimensions(new Dimension(40000, 40));
+    }
+
+    public function imagineProvider()
+    {
+        return [
+            [ImagineFactory::GD],
+            [ImagineFactory::GMAGICK],
+            [ImagineFactory::IMAGICK]
+        ];
     }
 
     public function tearDown()

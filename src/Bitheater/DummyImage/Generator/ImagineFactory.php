@@ -43,7 +43,6 @@ class ImagineFactory
     }
 
     /**
-     * @param AbstractImagine $imagine
      * @param string $name
      * @param string $font
      * @param int $size
@@ -51,7 +50,6 @@ class ImagineFactory
      * @return FontInterface
      */
     public static function createFontInstance(
-        AbstractImagine $imagine,
         $name,
         $font,
         $size,
@@ -63,10 +61,10 @@ class ImagineFactory
                 $imagine = new GdFont($font, $size, $color);
                 break;
             case self::IMAGICK:
-                $imagine = new ImagickFont($imagine, $font, $size, $color);
+                $imagine = new ImagickFont(new \Imagick(), $font, $size, $color);
                 break;
             case self::GMAGICK:
-                $imagine = new GmagickFont($imagine, $font, $size, $color);
+                $imagine = new GmagickFont(new \Gmagick(), $font, $size, $color);
                 break;
             default:
                 throw new LogicException('Unknown type ' . $name);

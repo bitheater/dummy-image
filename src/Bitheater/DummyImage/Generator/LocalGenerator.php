@@ -47,7 +47,6 @@ class LocalGenerator extends Generator
         );
 
         $font = ImagineFactory::createFontInstance(
-            $this->imagine,
             $this->instanceType,
             __DIR__ . '/resource/mplus.ttf',
             $fontSize,

@@ -9,5 +9,8 @@ before_script:
 
 before_install:
   - sudo apt-get install -qq php5-gd
+  - sudo apt-get install -qq php5-imagick
+  - sudo apt-get install -qq libgraphicsmagick1-dev
+  - pecl install gmagick-1.1.7RC2
 
 script: phpunit -c tests/
